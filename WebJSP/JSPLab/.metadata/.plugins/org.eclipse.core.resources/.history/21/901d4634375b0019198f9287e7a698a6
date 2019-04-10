@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- StringBuffer url = request.getRequestURL();    // URL : 전체주소 (프로토콜 + IP + 포트 + 상세경로)
+ String uri = request.getRequestURI();            // URI : 프로젝트 이하 경로 (CP + SP)
+ String cp = request.getContextPath();           // CP : 프로젝트 명
+ String sp = request.getServletPath();            // SP : 패키지 + 파일명
+ 
+ System.out.println("URL : " + url);
+ System.out.println("URI  : " + uri);
+ System.out.println("CP   : " + cp);
+ System.out.println("SP   : " + sp);
+ 
+
+-----------------------------------------------------------------
+
+ URL : http://localhost:8080/TestBoard/JSPBoard/created.jsp
+ URI  : /TestBoard/JSPBoard/created.jsp
+ CP   : /TestBoard
+ SP   : /JSPBoard/created.jsp
+
+-----------------------------------------------------------------
+
+   -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    <%
+    request.setCharacterEncoding("UTF-8");
+    
+    String userid = request.getParameter("userid");
+    String userName = request.getParameter("userName");
+    String userPass = request.getParameter("userPass");
+    String userPassCheck = request.getParameter("userPassCheck");
+    String[] gender = request.getParameterValues("gender");
+    String userEmail = request.getParameter("userEmail");
+    String userSsn1 = request.getParameter("userSsn1");
+    String userSsn2 = request.getParameter("userSsn2");
+    String userZipCode = request.getParameter("userZipCode");
+    String userAddr1 = request.getParameter("userAddr1");
+    String userAddr2 = request.getParameter("userAddr2");
+    String userPhone = request.getParameter("userPhone");
+    String[] hobby = request.getParameterValues("hobby");
+    String year = request.getParameter("year");
+    String month = request.getParameter("month");
+    String day = request.getParameter("day");
+    
+    
+    
+    
+    
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>이것은 과제입니다 !!!!!!!!!!!!![   `ㅁ`  ]</h1><br>
+	아이디 : <%=userid %><br>
+	이름 : <%=userName %><br>
+	패스워드 : <%=userPass %><br>
+	패스워드 확인 : <%=userPassCheck %><br>
+	<%
+	
+		for(String result : gender) {
+	%>		
+			성별 :<%=result %>
+	<% 
+		}
+	%>
+	
+	<br> <!-- 배열 -->
+	이메일 : <%=userEmail %><br>
+	주민번호 : <%=userSsn1 %> - <%= userSsn2%><br>
+	우편번호 : <%=userZipCode %><br>
+	주소1 : <%=userAddr1 %><br>
+	주소2 : <%=userAddr2 %><br>
+	핸드폰번호 : <%=userPhone %><br>
+	<%
+	
+		for(String result2 : hobby) {
+	%>		
+			취미 :<%=result2 %><br>
+	<% 
+		}
+	%> <!-- 배열 -->
+	생년월일 : <%=year%>년<%=month %>월<%= day %>일<br>
+
+
+
+</body>
+</html>

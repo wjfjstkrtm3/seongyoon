@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수(내장함수)</title>
+	<script type="text/javascript">
+		var mytime = window.setInterval(function() { // 일회성 함수 (익명함수) setInterval 호출했을때 한번 사용
+			// javascript 객체 (Date 객체)
+			// Date d = newDate() : JAVA
+			var d = new Date();
+			var t = d.toLocaleTimeString();
+			// DOM script
+			document.getElementById("time").innerHTML = t;
+		}, 1000); // 1초마다 실행
+		
+		function myTimeStop() {
+			window.clearInterval(mytime);
+			
+		}
+		
+		function myTimeStart() {
+			//setInterval(function, time)
+			window.setInterval(function() {
+				var d = new Date();
+				var t = d.toLocaleTimeString();
+				document.getElementById("timestart").innerHTML = t;	
+			}, 1000);
+			
+		}
+	</script>
+</head>
+<body>
+	<p id = "time"></p><br>
+	<button onclick = "myTimeStop()">Stop Time</button><hr>
+	
+ 	<p id = "timestart"></p><br>
+ 	<button onclick = "myTimeStart()">Start Time</button> 
+	
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<%@page import="java.util.Calendar"%>
+<%@page import="kr.or.bit.Emp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    <%
+    
+    	Emp e = new Emp();
+    	e.setEmpno(1000);
+    	e.setEname("홍길동");
+    	// Calendar 객체 생성하고
+    	// 오늘날짜 : 2019년 4월 9일
+    	Date date = new Date();
+    	Calendar cal = date;
+    	
+    	
+    
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

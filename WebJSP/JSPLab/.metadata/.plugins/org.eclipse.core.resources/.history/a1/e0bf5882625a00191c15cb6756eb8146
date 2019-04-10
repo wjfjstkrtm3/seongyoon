@@ -1,0 +1,18 @@
+<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%
+		// 스크립트릿 (java code 작성)
+		Date day = new Date();
+%>
+<html>
+<head>
+<meta charset="UTsF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	오늘날짜:(표현식 : 출력)<b><%= day %></b> <!--  표현식 -->
+</body>
+</html>

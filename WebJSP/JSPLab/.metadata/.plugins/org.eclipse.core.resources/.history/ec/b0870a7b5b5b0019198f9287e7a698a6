@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%
+    		/*
+    		요청에 대한 흐름제어 (forward ...)
+    		
+    		include 
+    		forward 같이 비교
+    		
+    		공통점 : request 객체 공유
+    		차이점 : include 제어권을 돌려받는다
+    			   forword 제어권을 넘겨 준다
+    			   (요청 주소는 동일한데 : 각각 다른 페이지의 서비스를 받을 수 있다)
+    		
+    		
+    		*/
+    
+    
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

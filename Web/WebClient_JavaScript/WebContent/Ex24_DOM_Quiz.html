@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var myphotos = Array("images/1.png",
+					             "images/2.png",
+					             "images/3.png",
+					             "images/4.png"
+			                     );
+			
+			var index = 0;
+			var next = document.getElementById("next");
+			var img = document.getElementById("imgs");
+			
+			console.log(next);
+			console.log(img);
+			next.onclick = function() {
+				
+				index++;
+				if(index ==4) {
+					index = 0;
+				}
+				img.src = myphotos[index];
+				
+				
+				
+			}
+			
+			document.getElementById("prv").onclick = function() {
+				
+				index--;
+				if(index == -1) {
+					index =3;
+					
+					
+				}
+				img.src = myphotos[index];
+				
+			}
+			//console.log(myphotos[index]); 
+			//[0][1][2][3]
+			/* var index=0;
+			console.log("index : " + index);
+			document.getElementById("prv").onclick = function(){
+				if(index == 0){
+					index = myphotos.length;
+				}
+				console.log("before :" + index);
+				document.getElementById("imgs").src = myphotos[--index];
+				//[0][1][2][3]
+			}
+			
+			
+			//id next onclick 이벤트 .....
+			document.getElementById("next").onclick = function(){
+				if(++index == myphotos.length){
+					index = 0;
+				}
+				console.log("after :" + index);
+				document.getElementById("imgs").src = myphotos[index];
+				//[0][1][2][3]
+			}
+			 */
+			
+		}
+	</script>
+</head>
+<body>
+	<h3>DOM 슬라이드</h3>
+	<img src="images/1.png" id="imgs" width="200" height="200" alt="이미지">
+	<hr>
+	<a href="#" id="prv">이전</a> ||<a href="#" id="next">다음</a> 
+</body>
+</html>

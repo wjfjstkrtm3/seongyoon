@@ -1,0 +1,1 @@
+hello=C:\Temp\abcdefg.txt

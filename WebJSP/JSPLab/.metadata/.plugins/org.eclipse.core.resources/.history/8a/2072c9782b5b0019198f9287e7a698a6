@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Response 객체(응답객체)</title>
+
+</head>
+<body>
+<!--
+Client(웹 브라우져) -> Server
+				 request : 요청
+				 
+Client(웹 브라우져) <- Server
+
+-->
+
+
+
+</body>
+</html>

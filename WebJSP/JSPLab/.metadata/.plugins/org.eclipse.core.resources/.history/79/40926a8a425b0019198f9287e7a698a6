@@ -1,0 +1,62 @@
+
+<style>
+h1 {
+  text-align: center;
+  margin: 0;
+  padding : 30px;
+  color: white;
+}
+
+header {
+	background-color: #0097e6;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0097e6;
+}
+
+li {
+  float: left;
+  
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  margin: 16px;
+  text-decoration: none;
+  
+}
+
+li a:hover {
+  background-color: orange;
+}
+body{
+  background-image: url(images/2.jpg);
+  margin: 0px;
+  
+  
+}
+
+</style>
+
+
+
+	<header>
+		<h1>Team 3 Media</h1>
+	</header>
+
+	<nav>
+		<ul>
+			<li><a href="#"><strong>Home</strong></a></li>
+			<li><a href="Media/media.html"><strong>Audio</strong></a></li>
+			<li><a href="Media/Youtube.html"><strong>youtube</strong></a></li>
+			<li><a href="https://codepen.io/LuiGee3471/project/editor/XRGeWa"><strong>video code</strong></a></li>
+			<li><a href="https://codepen.io/LuiGee3471/pen/wZGygN"><strong>video js</strong></a></li>
+		</ul>
+	</nav>
