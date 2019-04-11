@@ -8,7 +8,7 @@
     String userName = request.getParameter("userName");
     String userPass = request.getParameter("userPass");
     String userPassCheck = request.getParameter("userPassCheck");
-    String[] gender = request.getParameterValues("gender");
+    String gender = request.getParameter("gender").equals("male") ? "남" :"여";
     String userEmail = request.getParameter("userEmail");
     String userSsn1 = request.getParameter("userSsn1");
     String userSsn2 = request.getParameter("userSsn2");
@@ -38,14 +38,7 @@
 	이름 : <%=userName %><br>
 	패스워드 : <%=userPass %><br>
 	패스워드 확인 : <%=userPassCheck %><br>
-	<%
-	
-		for(String result : gender) {
-	%>		
-			성별 :<%=result %>
-	<% 
-		}
-	%>
+	성별 : <%=gender %>
 	
 	<br> <!-- 배열 -->
 	이메일 : <%=userEmail %><br>

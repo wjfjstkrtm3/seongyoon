@@ -5,6 +5,7 @@
 <%
 		// 스크립트릿 (java code 작성)
 		Date day = new Date();
+		
 		/*
 		JSP 페이지 (UI > html, css, script + code(server) > java)
 		JSP 페이지 (tomcat(WAS 웹 어플리케이션 서버) + => jsp(java) => compile(class)) 

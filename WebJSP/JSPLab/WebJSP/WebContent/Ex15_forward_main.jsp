@@ -7,7 +7,7 @@
     		include 
     		forward 같이 비교
     		
-    		공통점 : request 객체 공유
+    		공통점 : request 객체 공유    // 실행페이지에 있는 request객체를 include한 페이지에서도 request객체를 공유해서 사용 가능
     		차이점 : include 제어권을 돌려받는다
     			   forword 제어권을 넘겨 준다
     			   (요청 주소는 동일한데 : 각각 다른 페이지의 서비스를 받을 수 있다)
