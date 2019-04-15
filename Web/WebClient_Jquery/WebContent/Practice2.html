@@ -8,35 +8,99 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
-<style>
-h1 {
-	text-align: center;
-}
-
-.col-sm-12 {
-
-	border: 2px solid black;
-}
-
-.col-sm-4{
-	margin : 0 auto;
-	height : 500px;
-}
-
-.col-sm-7 {
-	margin: 0 auto;
-	height: 500px;
-}
-
-</style>
+	<script type="text/javascript">
+	
+	$(document).ready(function() {
+		
+		// 1. $(selector).each(function() {this});
+		$("p").each(function() {
+			console.log("this : " + $(this).text());
+		});
+		
+		$("p").each(function(index) {
+			console.log("index : " + index + "/" + $(this).text());
+		});
+		
+		$("p").each(function(index, element) {
+			console.log("element : " + $(element).text());
+			
+			$(this).attr( 
+			{
+				"id":"param-"+index,
+				"style":"color:red"
+				
+				
+			}
+			)
+		});
+		
+		// [p,p,p]
+		
+		
+		var array = [
+			
+			{"name":"naver", "link":"www.naver.com"},
+			{"name":"daum", "link":"www.daum.net"},
+			{"name":"bit", "link":"www.bit.com"}
+			
+		];
+		
+		$(array).each(function(index, element) {
+			console.log("index : " + index);
+			console.log("element : " + element.name + "/" + element.link);
+			
+		});
+		
+		$.each(array, function(index, element) {
+			console.log("index : " + index);
+			console.log("element : " + element.name +  "/" + element.link);
+			
+		});
+		
+		var board =  {
+				
+				values: [
+					
+					{no:1, title:"hello"},
+					{no:2, title:"world"},
+					{no:3, title:"korea"},
+					
+				],
+				search:"검색"
+		
+		
+		};
+		
+		$.each(board.values, function(index, element) {
+			
+			console.log("index : " + index);
+			console.log("element : " + element.no + "/" + element.title);
+			
+		});
+		
+		// 문제 $.each() 문을 통해서 no, title, search 값을 출력하세요
+		$.each(board, function(index, element) {
+			console.log("*************************");
+			console.log("index : " + index);
+			console.log("element: " + element);
+		});
+		
+		
+	});
+	
+		
+	
+	</script>
 </head>
 <body>
- 
-<div class="container-fluid" > <div class="row"> <div class="col-md-3 col-sm-6">.col-md-3 .col-sm-6</div> <div class="col-md-3 col-sm-6">.col-md-3 .col-sm-6</div> <div class="col-md-3 col-sm-6">.col-md-3 .col-sm-6</div> <div class="col-md-3 col-sm-6">.col-md-3 .col-sm-6</div> </div> </div>
 
-
-  
-
+ 		<p>java</p>
+		<p>jsp</p>
+		<p>oracle</p>
+	    <input type = "button" value = "click" id = "btn">
+	
+		
+		
     
 </body>
 </html>

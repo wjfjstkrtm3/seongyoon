@@ -81,9 +81,12 @@
  			//Top.jsp 활용
  			session.setAttribute("userid", rs.getString("id"));
  			
- 			out.print("<script>");
+ 			 out.print("<script>");
  				out.print("location.href='Ex02_JDBC_Main.jsp'");
- 			out.print("</script>");
+ 			out.print("</script>"); 
+ 			
+ 			/* response.sendRedirect("Ex02_JDBC_Main.jsp"); */
+ 			
  		}else{
  			//ID(0) , PWD(x)
  				out.print("<script>");
