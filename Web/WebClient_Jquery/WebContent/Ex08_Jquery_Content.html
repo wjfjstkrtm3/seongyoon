@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+/*
+text() - Sets or returns the text content of selected elements
+html() - Sets or returns the content of selected elements (including HTML markup)
+val() - Sets or returns [the value of form fields]
+https://www.w3schools.com/jquery/jquery_dom_get.asp
+
+
+ 3가지 함수 parameter 가지면 (setter) >> text("aaaa");
+ 						(getter) >> text()
+ div, p, span, >> value(X) 속성이 없어요  <div>text</div>
+*/
+
+	$(function() {
+			$("#btn1").click(function() {
+				alert("text : " + $("#test").text()); 
+			});
+			
+			$("#btn2").click(function() {
+				alert("html : " + $("#test").html()); // html 요소 정보도 가지고온다
+			});
+			
+			/* $("#btn3").click(function() {
+					$("#test").text("<div>AAAAA</div>"); // 정말로 div태그가 적용된게 아니라 텍스트 형태로 나옴
+				
+			}); */
+			
+			$("#btn3").click(function() {
+				$("#test").html("<div>AAAAA</div>"); // 정말로 div태그가 적용된게 아니라 텍스트 형태로 나옴
+			
+		});
+			$("#btn4").on("click", function() {
+				alert($("#test2").val());
+				
+			});
+			
+		
+		
+	});
+
+
+
+</script>
+
+
+</head>
+<body>
+
+		<p id = "test">안녕하세요<b>정말</b>방가방가</p>
+		<button id = "btn1">show text</button>
+		<button id = "btn2">show html</button>
+		<button id = "btn3">html</button>
+		<button id = "btn4">input tag</button>
+		<input type = "text" id = "test2" value = "helloworld">
+
+</body>
+</html>

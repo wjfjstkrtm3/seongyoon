@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	<style type="text/css">
+	.redcolor {
+		background-color: red;
+	}
+	
+	</style>
+	<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+	
+	
+	$(function() {
+		
+		$("#btn2").hide();
+		$("#btn3").hide();
+		$("#btn4").hide();
+		$("#btn5").hide();
+		
+		$("#btn").on("click", function() {
+			
+		
+			$("#btn2").toggle();
+			$("#btn2").removeClass("redcolor");
+			$("#btn3").toggle();
+			$("#btn4").toggle();
+			$("#btn5").toggle();
+		});
+		
+		$("#btn2").on(
+				
+		{
+			click:function() {
+				for(var i = 1; i<=5; i++) {
+				alert("슈바로마" + i);
+				}
+			},
+		
+			mouseover:function() {
+				$("#btn2").addClass("redcolor");
+			}
+			
+			
+			
+		}
+				
+		);
+
+		$("#btn3").dblclick(function() {
+			alert("아무개");
+		});
+		
+		$("#textbox").on({
+			
+			keypress: function() {
+				alert("키눌렀다 냥");
+				
+			},
+		
+			focus: function() {
+				$(this).css("background-color", "gray");
+			},
+			
+			blur: function() {
+				$(this).css("background-color", "white");
+			}
+			
+		});
+			
+			
+		$("#btn4").click(function() {
+		
+			setTimeout(function() {
+				alert("3초 지남");
+				$("body").css("background-color", "papayawhip");
+			}, 3000);
+			
+			
+			
+			
+		});
+		
+		$("#btn5").click(function() {
+			
+			var text = "슈바로마";
+			$("#divaa").text(text);
+			
+			
+		});
+		
+		
+		
+	});
+	
+	
+	
+	</script>
+</head>
+<body>
+	
+	<form action="">
+	
+	<input type = "button" value = "나를 눌러봥" id = "btn">
+	<input type = "button" value = "나를 눌러봥2" id = "btn2">
+	<input type = "button" value = "나를 눌러봥3" id = "btn3">
+	<input type = "button" value = "나를 눌러봥4" id = "btn4">
+	<input type = "button" value = "나를 눌러봥5" id = "btn5">
+	<input type = "text" id = "textbox">
+	<div id = "divaa"></div>
+	
+	
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+

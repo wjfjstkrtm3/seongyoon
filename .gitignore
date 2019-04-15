@@ -1,1 +1,15 @@
 *.classpath
+Web/.metadata/
+*.project
+*.prefs
+Web/Servers/
+Web/WebClient_Jquery/.settings/
+Web/WebClient_Jquery/.tern-project
+Web/WebJSP_JDBC_BASIC/.settings/
+Web/WebJSP_JDBC/.settings/
+Web/WebJSP_JDBC/WebContent/WEB-INF/
+Web/WebJSP_JDBC/WebContent/META-INF/
+Web/WebJSP_JDBC_BASIC/WebContent/META-INF/
+Web/WebJSP_JDBC_BASIC/WebContent/WEB-INF/
+Web/WebClient_Jquery/WebContent/META-INF/
+Web/WebClient_Jquery/WebContent/WEB-INF/
