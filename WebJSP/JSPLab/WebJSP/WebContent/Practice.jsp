@@ -10,10 +10,13 @@
 </head>
 <body>
 
-	<%
-	Emp e = (Emp)request.getAttribute("amumu");
-	out.print(e.getEmpno() +"/" + e.getEname());
-	%>
+	<form action="Practiceloginok.jsp" method = "post">
+	사번 : <input type = "text" name = "empno"><br>
+	이름 : <input type = "text" name = "ename"><br>
+	<input type = "submit" value= "전송하기">
+	
+	
+	</form>
 
 </body>
 </html>

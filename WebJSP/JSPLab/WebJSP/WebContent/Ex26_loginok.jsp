@@ -16,7 +16,7 @@
     //a.jsp  , b.jsp 에서도 사용가능
 %>    
 <%--
- 1단계 실습 코드
+ 1단계 실습 
  <jsp:useBean id="emp" class="kr.or.bit.Emp" scope="session"></jsp:useBean>
  <jsp:setProperty property="empno" name="emp" param="txtempno"/>
  <jsp:setProperty property="ename" name="emp" param="txtename"/> 
