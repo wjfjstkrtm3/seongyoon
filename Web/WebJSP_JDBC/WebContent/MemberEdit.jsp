@@ -6,23 +6,21 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<link rel = "stylesheet" href = "css/Detail_Table.css">
 
+<jsp:include page="common/head.jsp" />
+</head>
+<body style = "color:black">
+<jsp:include page="common/header.jsp" />
+<div class="center-area">
+  <jsp:include page="common/aside.jsp" />
+  <main>
 <%
-	/*
-Ex03_MemberEdit.jsp?id=hong
-sql > select * from koreamember where id = ?;
-결과를 화면 출력 : 출력(수정(X)) : <td>rs.getString("name")</td>
-	   출력(수정(O)) : <td>input type = "text" value = 'rs.getString("name")'></td>
-	   출력(다른페이지 전송(O)) : <td>input type = "text" name = "" value = 'rs.getString("name")' readonly></td>
-	   
-Ex03_MemberEditok.jsp?
-sql > update emp set ename = ?, job = ?, sal = ? where empno = ?
-*/
-if(session.getAttribute("userid") == null || !session.getAttribute("userid").equals("admin")) {
-	out.print("<script>location.href = 'Ex02_JDBC_Login.jsp'</script>");
+	 if(session.getAttribute("userid") == null || !session.getAttribute("userid").equals("admin")) {
+	out.print("<script>location.href = 'Login.jsp'</script>");
 	// 강제로 다른 페이지로 이동 
 	
-}
+} 
 String id = request.getParameter("id");
 Connection conn = null;
 PreparedStatement pstmt = null;
@@ -37,45 +35,17 @@ try {
 	 rs = pstmt.executeQuery();
 	 
 	 rs.next();
-%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-table {
-	border: solid 2px black;
-	border-collapse: collapse;
-}
-
-tr {
-	border: solid 1px blue;
-	background-color: white;
-	color: black;
-}
-
-td {
-	border: solid 1px red;
-}
-</style>
-</head>
-<body>
-	<table style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">
-		<tr>
-			<td colspan="2"><jsp:include page="/common/Top.jsp"></jsp:include>
-			</td>
-		</tr>
-		<tr>
-			<td style="width: 200px"><jsp:include page="/common/Left.jsp"></jsp:include>
-			</td>
-			<td style="width: 700px">
-				<form action="Ex03_MemberEditok.jsp" method="post">
-
-					<h3 style="text-align: center;">회원가입</h3>
-					<div>
-						<table
-							style="width: 400px; height: 200px; margin-left: auto; margin-right: auto;">
+%>  
+	
+				<form action="MemberEditok.jsp" method="post">
+						
+				
+					<div style ="margin-top:100px">
+					
+						<table class ="container">
+						<tr>
+						<td colspan ="2"><div style = "text-align:center; margin-bottom:40px;"><h1 style = "color:white; font-family:sans-serif">수정하기</h1></div></td>
+						</tr>
 							<tr>
 								<td>아이디</td>
 								<td>
@@ -116,22 +86,18 @@ td {
 							</tr>
 							<tr>
 								<td colspan="2"><input type="submit" value="수정하기">
-								<a href='Ex03_Memberlist.jsp'>리스트이동</a></td>
+								<a href='MemberList.jsp'>리스트이동</a></td>
 						</table>
 
 					</div>
 				</form>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2"><jsp:include page="/common/Bottom.jsp"></jsp:include>
-			</td>
-		</tr>
-	</table>
-</body>
-</html>
-
-
+		
+		
+		
+	
+  </main>
+</div>
+<jsp:include page="common/footer.jsp" />
 <%
 	} catch(Exception e) {
 	e.printStackTrace();
@@ -142,5 +108,4 @@ td {
 	
 }
 %>
-
 

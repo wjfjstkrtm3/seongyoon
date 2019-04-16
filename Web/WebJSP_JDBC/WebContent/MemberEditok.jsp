@@ -5,19 +5,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	/*
-	1. 권한처리
-	2. 한글처리
-	3. 데이터 받기
-	4. update koreamember set name = ?, age = ?, email = ?, gender = ?
-		where id = ?
-		
-	5. 성공 : Ex03_Memberlist.jsp
 	
-	*/
 	
 	if(session.getAttribute("userid") == null || !session.getAttribute("userid").equals("admin")) {
-		out.print("<script>location.href = 'Ex02_JDBC_Login.jsp'</script>");
+		out.print("<script>location.href = 'Login.jsp'</script>");
 		// 강제로 다른 페이지로 이동 
 		
 	}
@@ -47,7 +38,7 @@
 		 int row = pstmt.executeUpdate();
 		 
 		 if(row > 0) {
-	 out.print("<script>location.href = 'Ex03_Memberlist.jsp'</script>");
+	 out.print("<script>location.href = 'MemberList.jsp'</script>");
 	 
 		 } else {
 	 // 필요에 따라 구현

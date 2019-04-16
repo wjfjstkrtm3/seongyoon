@@ -1,11 +1,12 @@
-<%@page import="kr.or.kosta.utils.Singleton_Helper"%>
+
+<%@page import="kr.or.bit.utils.SingletonHelper"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
- /*  
+	/*  
  1. 한글처리
  2. 데이터 받기(ID, PWD)
  3. DB 연동(sql)
@@ -65,7 +66,7 @@
  try{
 	
  	//conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","kosta","1004");;
- 	conn = Singleton_Helper.getConnection("oracle");
+ 	conn = SingletonHelper.getConnection("oracle");
  	String sql = "select id,pwd from koreamember where id=?";
  	pstmt = conn.prepareStatement(sql);
  	pstmt.setString(1,id);
@@ -90,22 +91,21 @@
  		}else{
  			//ID(0) , PWD(x)
  				out.print("<script>");
-					out.print("location.href='Ex02_JDBC_Login.jsp'");
-				out.print("</script>");
+			out.print("location.href='Ex02_JDBC_Login.jsp'");
+		out.print("</script>");
  		}
  	}
  		//ID(x)
  		out.print("<script>");
-			out.print("location.href='Ex02_JDBC_JoinForm.jsp'");
+	out.print("location.href='Ex02_JDBC_JoinForm.jsp'");
 		out.print("</script>");
  	
  }catch(Exception e){
  	e.printStackTrace();
  }finally{
  	System.out.println("Finally");
- 	Singleton_Helper.close(rs);
-	Singleton_Helper.close(pstmt);
+ 	SingletonHelper.close(rs);
+	SingletonHelper.close(pstmt);
 		//연결은 해제 하지 않아요 ....
  }
-
 %>

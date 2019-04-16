@@ -12,51 +12,19 @@
 	
 	$(document).ready(function() {
 		
-		// 1. $(selector).each(function() {this});
-		$("p").each(function() {
-			console.log("this : " + $(this).text());
-		});
-		
-		$("p").each(function(index) {
-			console.log("index : " + index + "/" + $(this).text());
-		});
-		
-		$("p").each(function(index, element) {
-			console.log("element : " + $(element).text());
-			
-			$(this).attr( 
-			{
-				"id":"param-"+index,
-				"style":"color:red"
-				
-				
-			}
-			)
-		});
-		
-		// [p,p,p]
-		
-		
 		var array = [
-			
 			{"name":"naver", "link":"www.naver.com"},
 			{"name":"daum", "link":"www.daum.net"},
-			{"name":"bit", "link":"www.bit.com"}
+			{"name":"bit", "link":"www.bit.com"},
 			
-		];
+		]
 		
-		$(array).each(function(index, element) {
-			console.log("index : " + index);
-			console.log("element : " + element.name + "/" + element.link);
-			
-		});
 		
-		$.each(array, function(index, element) {
-			console.log("index : " + index);
-			console.log("element : " + element.name +  "/" + element.link);
-			
-		});
 		
+		   // in 다음에 객체가 오면 
+		   // {키:값, 키:값, 키:값}
+	
+		  
 		var board =  {
 				
 				values: [
@@ -67,25 +35,52 @@
 					
 				],
 				search:"검색"
-		
-		
 		};
 		
-		$.each(board.values, function(index, element) {
-			
+		
+		$.each(board.values, function(index, arr) {
+				
 			console.log("index : " + index);
-			console.log("element : " + element.no + "/" + element.title);
+			console.log("arr : " + arr.no + "/" + arr.title);
+		});
+		
+		$.each(board, function(key, value) {
+			if(typeof(value) == "object") {
+				$.each(value, function(index, arr) {
+					console.log(arr.no + "/" + arr.title);
+				});
+				
+			} else {
+				console.log(key + value);
+			}
 			
 		});
 		
-		// 문제 $.each() 문을 통해서 no, title, search 값을 출력하세요
-		$.each(board, function(index, element) {
-			console.log("*************************");
-			console.log("index : " + index);
-			console.log("element: " + element);
-		});
 		
 		
+	/* $.each(board, function(key, value) {
+		console.log(value);
+		if(typeof(value)=="object") {
+			$.each(value, function(index, obj) {
+				console.log("no : " + obj.no + "/" + "title : " + obj.title);
+			});
+		} else {
+			console.log("key : " + key + "/" + "value : " + value)
+		}
+	});
+		
+		for(var key in board) {
+			console.log(key);
+			console.log(board);
+			
+			if(typeof(board) == "object") {
+				
+			for(var index in board.values) {
+			console.log(board.values[index].no + "/" + board.values[index].title);	
+			}
+			}
+		}
+		 */
 	});
 	
 		

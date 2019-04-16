@@ -26,8 +26,7 @@ td {
 </style>
 </head>
 <body>
-	<table
-		style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">
+	<table style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">
 		<tr>
 			<td colspan="2">
 				<jsp:include page="/common/Top.jsp"></jsp:include>
