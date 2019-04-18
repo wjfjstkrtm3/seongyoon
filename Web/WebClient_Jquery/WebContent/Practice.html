@@ -3,121 +3,66 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	
-	<style type="text/css">
-	.redcolor {
-		background-color: red;
-	}
-	
-	</style>
 	<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
-	
-	
-	
-	$(function() {
+		//$(document).ready(function() {	});
 		
-		$("#btn2").hide();
-		$("#btn3").hide();
-		$("#btn4").hide();
-		$("#btn5").hide();
+		//일반 자바스크립트 함수 안에서 jquery 사용 가능 
 		
-		$("#btn").on("click", function() {
+		function javascriptFunc() {
+			var arrayobj = [];
 			
+			console.log($("table > tbody > tr"));
+		$("table > tbody > tr").each(function (index, element) {
+								
+				arrayobj.push(
+						
+						{					
+						grade:$(this).children().eq(0).text(),
+						name:$(this).children().eq(1).text(),
+						number:$(this).children().eq(2).text()
+						}
+						
+				);
 		
-			$("#btn2").toggle();
-			$("#btn2").removeClass("redcolor");
-			$("#btn3").toggle();
-			$("#btn4").toggle();
-			$("#btn5").toggle();
 		});
 		
-		$("#btn2").on(
-				
-		{
-			click:function() {
-				for(var i = 1; i<=5; i++) {
-				alert("슈바로마" + i);
-				}
-			},
+		console.log(arrayobj);
 		
-			mouseover:function() {
-				$("#btn2").addClass("redcolor");
+		
+		
+		// javascript 구문 (일반 for) 사용해서 arrayobj 값을 출력하세요
+		// 출력한 결과를 id = display 인 div 태그 안에 append 하세요
+		// 101th, 홍길동, 10
+			var sum ="";
+			for(var i = 0; i<arrayobj.length; i++) {
+				
+				
 			}
-			
-			
-			
+		
 		}
-				
-		);
-
-		$("#btn3").dblclick(function() {
-			alert("아무개");
-		});
-		
-		$("#textbox").on({
 			
-			keypress: function() {
-				alert("키눌렀다 냥");
-				
-			},
-		
-			focus: function() {
-				$(this).css("background-color", "gray");
-			},
-			
-			blur: function() {
-				$(this).css("background-color", "white");
-			}
-			
-		});
-			
-			
-		$("#btn4").click(function() {
-		
-			setTimeout(function() {
-				alert("3초 지남");
-				$("body").css("background-color", "papayawhip");
-			}, 3000);
-			
-			
-			
-			
-		});
-		
-		$("#btn5").click(function() {
-			
-			var text = "슈바로마";
-			$("#divaa").text(text);
-			
-			
-		});
-		
-		
-		
-	});
-	
-	
 	
 	</script>
 </head>
 <body>
-	
-	<form action="">
-	
-	<input type = "button" value = "나를 눌러봥" id = "btn">
-	<input type = "button" value = "나를 눌러봥2" id = "btn2">
-	<input type = "button" value = "나를 눌러봥3" id = "btn3">
-	<input type = "button" value = "나를 눌러봥4" id = "btn4">
-	<input type = "button" value = "나를 눌러봥5" id = "btn5">
-	<input type = "text" id = "textbox">
-	<div id = "divaa"></div>
-	
-	
-	</form>
+	<table border="1">
+		<thead>
+			<tr><td>기수</td><td>이름</td><td>번호</td></tr>
+		</thead>
+		<tbody>
+			<tr><td>101th</td><td>홍길동</td><td>10</td></tr>
+			<tr><td>102th</td><td>김유신</td><td>20</td></tr>
+			<tr><td>103th</td><td>유관순</td><td>30</td></tr>
+		</tbody>
+	</table>
+	<p>
+		<button onclick="javascriptFunc()">클릭</button>
+	</p>
+	<div id="display"></div>
+	<div id="display2"></div>
 </body>
 </html>
-
 
 
 
