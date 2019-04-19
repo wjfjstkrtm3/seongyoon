@@ -3,69 +3,137 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		//$(document).ready(function() {	});
-		
-		//일반 자바스크립트 함수 안에서 jquery 사용 가능 
-		
-		function javascriptFunc() {
-			var arrayobj = [];
-			
-			console.log($("table > tbody > tr"));
-		$("table > tbody > tr").each(function (index, element) {
-								
-				arrayobj.push(
-						
-						{					
-						grade:$(this).children().eq(0).text(),
-						name:$(this).children().eq(1).text(),
-						number:$(this).children().eq(2).text()
-						}
-						
-				);
-		
-		});
-		
-		console.log(arrayobj);
-		
-		
-		
-		// javascript 구문 (일반 for) 사용해서 arrayobj 값을 출력하세요
-		// 출력한 결과를 id = display 인 div 태그 안에 append 하세요
-		// 101th, 홍길동, 10
-			var sum ="";
-			for(var i = 0; i<arrayobj.length; i++) {
-				
-				
-			}
-		
+	<!-- <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript"> 
+		$(document).ready(function(){ 
+		   $("#add").click(function(){ 
+		      	move($("#leftTable"),$("#rightTable")); 
+		   }); 
+		   $("#del").click(function(){ 
+		      	move($("#rightTable"),$("#leftTable")); 
+		   }); 
+		}); 
+		function move(from, to) { 
+		   var target = from.find("tr:has(:checked)"); 
+		   if (target.length == 0) { 
+		      	alert("선택된 요소가 없습니다."); 
+		      }
+		   else{ 
+			      for ( var i = target.length - 1; i >= 0; i--) { 
+			         var item = target.eq(i); 
+			         copy(to, from, item); 
+			      } 
+			      target = from.find("tr:has(:checked)"); 
+			      target.each(function(i){ 
+			         $(this).remove(); 
+			      }); 
+		   } 
+		} 
+		function copy(to, from, item) { 
+		   var appended = false; 
+		   var targettext = item.find("td").eq(1).text(); 
+		   var trs = to.find("tr"); 
+		   for ( var i = trs.length - 1; i >= 0; i--) { 
+		      if (trs.eq(i).find("td").eq(1).text() < targettext) { 
+		         item.find(":checked").removeAttr("checked"); 
+		         trs.eq(i).after(item); 
+		         appended = true; 
+		         break; 
+		      } 
+		   } 
+		   if (!appended) { 
+		      item.find(":checked").removeAttr("checked"); 
+		      to.prepend(item); 
+		   } 
+		   return true; 
+		} 
+</script>
+<style>
+		.float_center {
+			float: center;
 		}
-			
-	
-	</script>
+		
+		.layout {
+			margin: 10px;
+			width: 700px;
+		}
+		
+		.pocket {
+			border: solid 1px #000;
+			height: 300px;
+			padding: 0px;
+			vertical-align: top;
+		}
+		
+		.dnd {
+			width: 100%;
+		}
+		
+		.dnd tr {
+			height: 30px;
+		}
+		
+		.dnd td {
+			border-bottom: solid 1px #aaa;
+		}
+		
+		.btn {
+			height: 20px;
+			border: solid 2px black;
+			padding: 5px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		
+		.center {
+			text-align: center;
+		}
+</style>
 </head>
 <body>
-	<table border="1">
-		<thead>
-			<tr><td>기수</td><td>이름</td><td>번호</td></tr>
-		</thead>
-		<tbody>
-			<tr><td>101th</td><td>홍길동</td><td>10</td></tr>
-			<tr><td>102th</td><td>김유신</td><td>20</td></tr>
-			<tr><td>103th</td><td>유관순</td><td>30</td></tr>
-		</tbody>
+	<table class="layout float_center">
+		<colgroup>
+			<col width="45%">
+			<col width="10%">
+			<col width="45%">
+		</colgroup>
+		<tr>
+			<td class="pocket center">
+				<table id="leftTable" class="dnd">
+					<tr>
+						<td><input type="checkbox"></td>
+						<td>TEST1</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td>TEST2</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td>TEST3</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td>TEST4</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td>TEST5</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td>TEST6</td>
+					</tr>
+				</table>
+			</td>
+			<td class="center"><span id="add" class="btn">추가</span> <br>
+				<br> <span id="del" class="btn">삭제</span></td>
+			<td class="pocket center">
+				<table id="rightTable" class="dnd">
+				</table>
+			</td>
+		</tr>
 	</table>
-	<p>
-		<button onclick="javascriptFunc()">클릭</button>
-	</p>
-	<div id="display"></div>
-	<div id="display2"></div>
 </body>
 </html>
-
-
-
-
-
-

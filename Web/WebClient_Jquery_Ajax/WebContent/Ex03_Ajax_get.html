@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	/* 
+	https://www.w3schools.com/jquery/jquery_ref_ajax.asp
+	
+
+	jQuery.get( url [, data ] [, success ] [, dataType ] ) 
+	$.get
+	
+	$.get("Ex03_Company.xml");
+	
+	>> javascript
+	>> httpReq.open("GET", "Ex03_Company.xml");
+	
+	*/
+	$(function() {
+		$("#btn").on("click", function() {
+			$.get("Ex03_Company.xml", function(data) {
+				console.log(data);
+				// 개발자 마음(데이터 가공 : 화면에 출력, 팝업, ..);
+				$("#display").empty(); // 자식 요소제거
+				console.log($(data).find("Company")); // jquery안에 data를 넣는이유는 함수를 사용하기위해서 넣는다
+				// find 함수 결과 : 베열 객체 [Company, Company]
+				
+				
+				/* $(data).find("Company").each(function(index, element) {
+						// 편하게 살려면 (function(index, element));
+						/* console.log(this);
+						console.log($(this).text());
+						$("#display").append($(this).text() + "<br>"); 
+						console.log(element);
+						$("#display").append($(element).text() + "<br>");
+				}); */
+				
+				$(data).find('Company').each(function(){
+					//편하게 살려면 each(function(index , elements))
+					//console.log(this);
+					
+					var entry = $(this);
+					console.log(entry);
+					var html = "<div>" + entry.attr('CompanyType') + "</div>";
+					//console.log(html);
+					html+="<div>" + entry.find('CompanyName').text() + "</div><br>";
+					html+="<div>" + entry.find('CompanyNumber').text() + "</div><br>";
+					html+="<div>" + entry.find('CompanyAddress').text() + "</div><br>";
+					html+="<div>" + entry.find('Name').text() + "</div><br>";
+					$('#display').append(html);
+				});
+				
+				
+				
+				
+				
+				
+									  
+			});
+		});
+	});
+
+</script>
+</head>
+<body>
+		<input type = "button" id = "btn" value = "회사소개">
+		<div id = "display" style = "background-color: blue">DATA</div>
+</body>
+</html>
