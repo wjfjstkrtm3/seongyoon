@@ -26,7 +26,7 @@
 <body>
 			<h3>EL 과 JSTL</h3>
 			<c:if test="${param.ID == 'hong'}">
-			${param.ID}<img src = "images/1044.png" alt = "이미지" style = "width:100px; height:100px">
+			${param.ID}<img src = "WebContent/Ex05_Basic_EL_JSTL.jsp""images/1044.png" alt = "이미지" style = "width:100px; height:100px">
 
 			</c:if> <!-- if(i > 100) -->
 			<hr>

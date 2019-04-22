@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+   <!-- Jquery의 js 파일 필수 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- Jquery UI 요소 사용 : 별도의 JS, CSS -->
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/Sunny/jquery-ui.css">
+    <script>
+      $(function() {
+        const url = 'https://yts.am/api/v2/list_movies.json?';
+        // sort_by=rating&genre=action
+        $('#rating').click(function() {
+          $.getJSON(
+            url,
+            {
+              sort_by: 'rating',
+              genre: $('genre').val(),
+            },
+            function(data2) {
+              console.log(data2);
+              console.log(data2.data.movies);
+              var image = data2.data.movies;
+              console.log(image);
+              $("#images").empty();
+              $.each(image, function(index, element) {
+            	  $("<img>").attr("src", element.medium_cover_image).appendTo("#images");
+                
+                  
+              });
+              
+              
+              
+            }
+          );
+        });
+
+        $('#download').click(function() {
+          $.getJSON(
+            url,
+            {
+              sort_by: 'download_count',
+              genre: $('genre').val(),
+            },
+            function(data2) {
+            	var image = data2.data.movies;
+                console.log(image);
+                $("#images").empty();
+                $.each(image, function(index, element) {
+              	  $("<img>").attr("src", element.medium_cover_image).appendTo("#images");
+                
+                  
+              });
+            }
+          );
+        });
+      });
+    </script>
+    <style>
+    .center {
+    	margin-left: 100px;
+    }
+    
+    
+    </style>
+  </head>
+  <body>
+  <div class = "center">
+    <select  class="ui-button ui-widget ui-corner-all"name="genre" id="genre">
+      <option value="action">액션</option>
+      <option value="drama">드라마</option>
+      <option value="western">서부</option>
+      <option value="fantasy">판타지</option>
+    </select>
+    <input class="ui-button ui-widget ui-corner-all" type="button" value="평점 순 검색" id="rating" />
+    <input class="ui-button ui-widget ui-corner-all"type="button" value="다운로드 수 순 검색" id="download" />
+    </div>
+    <div id = "images"></div>
+  </body>
+</html>
