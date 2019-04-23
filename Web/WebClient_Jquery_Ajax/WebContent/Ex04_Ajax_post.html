@@ -17,6 +17,7 @@
 				// 개발 : parameter >> json 객체 형태로 제공
 				var param = {"name":$("#name").val(), "pwd":$("#pwd").val()};
 				$.post("Ex04_Server.jsp", param, function(data){
+					console.log(data);
 					$("#message").html(data);
 					
 				});
