@@ -13,3 +13,4 @@ Web/WebJSP_JDBC_BASIC/WebContent/META-INF/
 Web/WebJSP_JDBC_BASIC/WebContent/WEB-INF/
 Web/WebClient_Jquery/WebContent/META-INF/
 Web/WebClient_Jquery/WebContent/WEB-INF/
+*.js

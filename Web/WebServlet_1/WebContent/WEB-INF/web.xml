@@ -20,19 +20,12 @@
     <servlet-name>frontboardcontroller</servlet-name>
     <url-pattern>/board</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-  	<servlet-name>practice</servlet-name>
-  	<servlet-class>com.Practice</servlet-class>
-
+    <servlet-name>practice</servlet-name>
+    <servlet-class>com.Practice</servlet-class>
   </servlet>
-
-	<servlet-mapping>
-		<servlet-name>practice</servlet-name>
-		<url-pattern>/practice</url-pattern>
-		
-	</servlet-mapping>  	
-  
-  
-  
+  <servlet-mapping>
+    <servlet-name>practice</servlet-name>
+    <url-pattern>/practice</url-pattern>
+  </servlet-mapping>
 </web-app>
