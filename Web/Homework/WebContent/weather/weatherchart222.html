@@ -99,75 +99,90 @@ body, html {
 						tempur.push(tempmax);
 						tempur2.push(tempmin);
 						console.log(list);
+						
+						var data2 = {
+
+								tooltip: {
+							        backgroundColor: '#FCFFC5'
+							        
+							    },
+
+							chart : {
+								  zoomType: 'x',
+						          panning: true,
+						          panKey: 'shift',
+						          plotBorderColor: '#346691',
+						          plotBorderWidth: 2,
+						          plotBackgroundColor: '#FFFFFF',
+						          plotShadow: true,
+								  borderRadius: 20,
+							      borderWidth: 2,
+								  backgroundColor: {
+							            linearGradient: [0, 0, 500, 500],
+							            stops: [
+							                [0, 'rgb(255, 255, 255)'],
+							                [1, 'rgb(200, 200, 255)']
+							            ]
+							        },
+								type : 'pie'
+							},
+							title : {
+								text : '3Times Max_Temp | Min Temp',
+									 style: {
+								            color: 'black',
+								            fontWeight: 'bold'
+								        }
+							},
+							subtitle: {
+						        text: 'Team Bit3',
+						        style: {
+						            color: 'black',
+						            fontWeight: 'bold'
+						        }
+						    },
+							
+							plotOptions : {
+								line : {
+									dataLabels : {
+										enabled : true
+									},
+									enableMouseTracking : false
+								}
+							},
+							
+							
+							
+						   series: [{
+					        name: 'Brands',
+					        colorByPoint: true,
+					        data: [{
+					            name: 'Chrome',
+					            y: 61.41,
+					            sliced: true,
+					            selected: true
+					        }, {
+					            name: 'Internet Explorer',
+					            y: 11.84
+					        }, {
+					            name: 'Firefox',
+					            y: 10.85
+					        }, {
+					            name: 'Edge',
+					            y: 4.67
+					        }, {
+					            name: 'Safari',
+					            y: 4.18
+					        }, {
+					            name: 'Other',
+					            y: 7.05
+					        }]
+					    }]
+					        
+					      
+						}
 					});
 
-					var data2 = {
-
-							tooltip: {
-						        backgroundColor: '#FCFFC5'
-						        
-						    },
-
-						chart : {
-							  zoomType: 'x',
-					          panning: true,
-					          panKey: 'shift',
-					          plotBorderColor: '#346691',
-					          plotBorderWidth: 2,
-					          plotBackgroundColor: '#FFFFFF',
-					          plotShadow: true,
-							  borderRadius: 20,
-						      borderWidth: 2,
-							  backgroundColor: {
-						            linearGradient: [0, 0, 500, 500],
-						            stops: [
-						                [0, 'rgb(255, 255, 255)'],
-						                [1, 'rgb(200, 200, 255)']
-						            ]
-						        },
-							type : 'spline'
-						},
-						title : {
-							text : '3Times Max_Temp | Min Temp',
-								 style: {
-							            color: 'black',
-							            fontWeight: 'bold'
-							        }
-						},
-						subtitle: {
-					        text: 'Team Bit3',
-					        style: {
-					            color: 'black',
-					            fontWeight: 'bold'
-					        }
-					    },
-						xAxis : {
-							categories : dttxt
-						},
-						yAxis : {
-							title : {
-								text : 'Temperature (°C)'
-							}
-						},
-						plotOptions : {
-							line : {
-								dataLabels : {
-									enabled : true
-								},
-								enableMouseTracking : false
-							}
-						},
-						
-						
-						
-						series : [ {
-							name : 'Max_Temp',
-							data : tempur
-						}, {
-							name : 'Min_Temp',
-							data : tempur2
-						} ]
-					}
+					
 
 					Highcharts.chart('container', data2);
 
