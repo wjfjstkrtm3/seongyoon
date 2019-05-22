@@ -20,5 +20,8 @@ public class HelloApp {
     MessageBean messagebean = context.getBean("m2", MessageBean.class);
     messagebean.sayHello();
     
+    
+
+    
   }
 }

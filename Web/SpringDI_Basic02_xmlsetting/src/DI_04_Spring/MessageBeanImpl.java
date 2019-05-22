@@ -7,7 +7,7 @@ public class MessageBeanImpl implements MessageBean{
   
   // name 의 초기화 (생성자)
   public MessageBeanImpl(String name) {
-    this.name = name; // 생성자를 통해서 memebere field 초기화
+    this.name = name; // 생성자를 통해서 member field 초기화
   }
   // greeting 의 초기화 (setter 함수)
   public void setGreeting(String greeting) {

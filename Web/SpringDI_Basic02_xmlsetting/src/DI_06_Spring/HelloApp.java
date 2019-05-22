@@ -10,8 +10,9 @@ public class HelloApp {
     // 요구사항 (Oracle DB 연동) Insert 작업을 수행
     // MysqlArticleDao oracle = new MysqlArticleDao();
     /*
-     * OracleArticleDao oracle = new OracleArticleDao(); ArticleService service =
-     * new ArticleService(oracle); Article article = new Article();
+     * OracleArticleDao oracle = new OracleArticleDao(); 
+     * ArticleService service = new ArticleService(oracle); 
+     * Article article = new Article();
      */
     
     
