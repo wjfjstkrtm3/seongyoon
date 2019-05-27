@@ -21,6 +21,7 @@ public class NoticeController implements Controller {
 public class HelloController {
   
       @RequestMapping("/hello.do") // hello.do 요청이 들어오면 이 함수를 실행 하겠다
+      
       public ModelAndView hello() {
         System.out.println("[hello.do start]");
         ModelAndView mv = new ModelAndView();
