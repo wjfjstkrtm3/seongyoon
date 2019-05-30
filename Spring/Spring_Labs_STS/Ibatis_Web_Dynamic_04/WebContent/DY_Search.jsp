@@ -25,7 +25,7 @@
 	//sp.setDeptno(0);
 	
 	//2. where deptno=10
-    //   sp.setDeptno(10);
+    //  sp.setDeptno(10);
 	
 	//3. select * from emp
 	//   nothing
@@ -33,15 +33,15 @@
 	
     
 	//4. where ename='SMITH' and deptno=10  (null 아니고 0 아닌 경우)
-    //sp.setEname("SMITH");
-    //sp.setDeptno(20);
+    // sp.setEname("SMITH");
+    // sp.setDeptno(20);
     
     //List<Emp> emp = dao.list(sp);
     
     
     
-    //SELECT * FROM emp WHERE empno IN(7788,7902,7369)
-	List<Emp> emp = dao.Emplist();
+    // SELECT * FROM emp WHERE empno IN(7788,7902,7369)
+     List<Emp> emp = dao.Emplist();
 
 %>
 Row Count : <%= emp.size() %><br>
