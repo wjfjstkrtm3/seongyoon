@@ -91,7 +91,7 @@ public class NewNoticeDao implements NoticeDao {
 	public void setJdbctemplate(JdbcTemplate jdbctemplate) {
 		this.jdbctemplate = jdbctemplate;
 	}
-
+	
 	
 	@Override
 	public int getCount(String field, String query) throws ClassNotFoundException, SQLException {
