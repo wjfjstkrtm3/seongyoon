@@ -2,6 +2,7 @@ package ncontroller;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.security.Principal;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -121,7 +126,7 @@ public class CustomerController {
 	//submit()
 	//데이터 insert 처리
 	@RequestMapping(value="noticeReg.htm",method=RequestMethod.POST)
-	public String noticeReg(Notice n , HttpServletRequest request) throws IOException, ClassNotFoundException, SQLException {
+	public String noticeReg(Notice n , HttpServletRequest request, Principal principal) throws IOException, ClassNotFoundException, SQLException {
 		
 		//private List<CommonsMultipartFile> files;
 		//files[0] >> a.jpg
@@ -145,9 +150,30 @@ public class CustomerController {
 			}
 		}
 		
+		
+		// security 에서 처리한 인증 사용자 정보 얻기
+		/*
+		SecurityContext context = SecurityContextHolder.getContext();
+		Authentication auth = context.getAuthentication(); // 인증관련 정보 얻기
+		UserDetails userinfo = (UserDetails)auth.getPrincipal();
+		System.out.println(userinfo.getAuthorities()); // ** 권한 정보 **
+		System.out.println(userinfo.getUsername()); // 로그인한 ID 정보
+		System.out.println(userinfo.getPassword());
+		*/
+		
+		// 함수의 parameter >> Principal principal
+		n.setWriter(principal.getName());
+		
+		
+		
 		//실 DB insert
 		n.setFileSrc(filenames.get(0));
 		n.setFileSrc2(filenames.get(1));
+		// n.setWriter(userinfo.getUsername());
+		
+		
+		
+		
 		NoticeDao noticedao = sqlsession.getMapper(NoticeDao.class);
 		noticedao.insert(n);
 		return "redirect:notice.htm";

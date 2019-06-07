@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="se" uri="http://www.springframework.org/security/tags" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <div id="content">
 	<h2>공지사항</h2>
 	<h3 class="hidden">방문페이지 로그</h3>
@@ -49,10 +47,10 @@
 		</tbody>
 	</table>
 	<p class="article-comment margin-small">
-		 <a class="btn-write button" href="noticeReg.htm">글쓰기</a>
+		<a class="btn-write button" href="noticeReg.htm">글쓰기</a>
 		<%-- <se:authorize access="hasRole('ROLE_USER') AND hasRole('ROLE_ADMIN')">
-				<a class="btn-write button" href="noticeReg.htm">글쓰기</a>
-			 </se:authorize> --%>
+			<a class="btn-write button" href="noticeReg.htm">글쓰기</a> 
+		</se:authorize> --%>
 	</p>
 	<p id="cur-page" class="margin-small">
 		<span class="strong">1</span> / 10 page
