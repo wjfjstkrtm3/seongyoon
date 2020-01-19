@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.or.bit.action.Action;
 import kr.or.bit.action.ActionForward;
-import kr.or.bit.dao.MvcRegisterDao;
-import kr.or.bit.dto.MvcRegister;
 import kr.or.bit.service.LoginProcessAction;
 import kr.or.bit.service.MemberWriteAction;
 
@@ -97,7 +95,7 @@ public class RegisterFrontController extends HttpServlet {
     			dis.forward(request, response);
     		}
     	}
-    	
+
     	
 	}
     

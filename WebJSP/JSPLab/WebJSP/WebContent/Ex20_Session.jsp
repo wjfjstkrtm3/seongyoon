@@ -25,6 +25,7 @@
   
  -->
  <%
+ 
  	Date time = new Date();
  	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
  %>

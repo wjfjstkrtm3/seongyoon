@@ -55,7 +55,6 @@ EL session value (생략) : ${user}; <br>
 <br>
 
 EL request parameter : ${param.userid}<br>
-
 <h3>EL(JSP 사용되는 script 언어)</h3>
 스크립트릿 : <%= 200+400 %><br>
 

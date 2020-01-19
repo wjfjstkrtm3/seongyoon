@@ -34,7 +34,7 @@ Client(웹 브라우져) <- Server
 <!-- 
     response.sendRedirect 코드가 클라이언트 브라우져가 해석 할 수 있는 형태로 변환
     <script type = "text.javascript">
-    	loaction.href = "Ex01_Basic_jsp"s
+    	loaction.href = "Ex01_Basic_jsp"
     </script>
 
  -->

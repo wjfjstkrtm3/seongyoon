@@ -2,7 +2,6 @@ package springbook.user.main;
 
 import java.sql.SQLException;
 
-import springbook.user.dao.DUserDao;
 import springbook.user.dao.NUserDao;
 import springbook.user.dao.UserDao;
 import springbook.user.domain.User;
@@ -23,7 +22,7 @@ public class program {
 		
 		
 		User user = new User();
-		user.setId("kglim");
+		user.setId("kglim4");
 		user.setName("홍길동");
 		user.setPassword("1004");
 

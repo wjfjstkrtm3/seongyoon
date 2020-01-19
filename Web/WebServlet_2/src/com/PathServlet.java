@@ -28,7 +28,7 @@ public class PathServlet extends HttpServlet {
 		out.print("<html>");
 			out.print("<head><title>HELLO</title></head>");
 			out.print("<body>");
-				out.print("설정된 패턴 이름(servlet) " + this.getServletName());
+				out.print("설정된 패턴 이름(servlet) " + this.getServletName() + "?");
 			out.print("</body>");
 		out.print("</html>");
 		

@@ -3253,3 +3253,10 @@ Spring/Spring_Utils/sts-bundle/sts-3.9.4.RELEASE/configuration/org.eclipse.osgi/
 Spring/Spring_Utils/sts-bundle/sts-3.9.4.RELEASE/configuration/org.eclipse.osgi/
 Spring/Spring_Utils/Spring_Utils.selection (1)/Maven/apache-maven-3.5.3-bin/
 Spring/Spring_Labs/TilesBoot_3Team/.settings/
+*.gitignore
+*.6
+*.13
+*.name
+*.container
+*.component
+*.jsdtscope

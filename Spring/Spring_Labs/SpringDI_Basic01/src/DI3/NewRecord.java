@@ -1,6 +1,6 @@
 package DI3;
 //VO , DTO , Domain 과 같은 개념 (데이터를 담을 수 있는 클래스)
-public class NewRecord  implements Record{
+public class NewRecord implements Record{
 	 private int kor;
 	 private int eng;
 	 private int math;

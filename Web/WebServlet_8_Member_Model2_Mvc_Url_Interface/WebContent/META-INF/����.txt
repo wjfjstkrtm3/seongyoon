@@ -35,7 +35,7 @@ CONTROLLER
    kr.or.bit.service
    kr.or.bit.util
 
-3. UI 작업 == 코드 (DTO -> DAO -> SERVICE -> Controller -> view 
+3. UI 작업 == 코드 (DTO -> DAO -> SERVICE -> Controller -> view)
 
 1. Controller 역할 분담
 

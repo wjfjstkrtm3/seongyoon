@@ -34,7 +34,6 @@
 	request.setAttribute("변수", "값");
 	scope: 요청 페이지 (Client > login.jsp 요청) >> request 객체 생성
 	POINT : login.jsp (include, forward) 된 페이지에서 request 객체를 참조 할 수 있다
-	
  -->
 <%
 	Emp emp = new Emp();

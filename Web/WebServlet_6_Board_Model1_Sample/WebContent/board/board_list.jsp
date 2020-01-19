@@ -18,6 +18,7 @@
 <body>
 	<c:import url="/include/header.jsp" />
 	게시판 목록
+  
 	<br>
 	<%
        //서비스 요청

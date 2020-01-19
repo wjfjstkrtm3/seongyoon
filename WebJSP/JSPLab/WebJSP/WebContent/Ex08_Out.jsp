@@ -31,10 +31,10 @@ out 객체 : 서버쪽 구현 편해요
 <%
 		boolean b2 = true;
 		if(10 > 5) {
-			out.print("IF(true):<font color = 'red'>"+b+"</font>");
+			out.print("IF(true):<font color = 'red'>"+b2+"</font>");
 		} else {
 			b2 = false;
-			out.print("IF(false):<font color = 'blue'>"+b+"></font>");
+			out.print("IF(false):<font color = 'blue'>"+b2+"></font>");
 		}
 %>
 

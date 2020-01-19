@@ -69,8 +69,8 @@ public class FrontBoardController extends HttpServlet {
      		//boarddao dao = new boarddao();
      		//List<board> boardlist = dao.selectboardlist();
      		//reqeust.setAttribute("list",boardlist);
-     		//view page forward 방식 
-     		//<c:set var="list" value="<%=request.getAttribute("list")%>
+     		//d 방식 
+     		//<c:set var="listview page forwar" value="<%=request.getAttribute("list")%>
      
     	
     }else if(cmd.equals("boardwrite")) {

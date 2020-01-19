@@ -27,6 +27,8 @@
 	   //POINT
 	   conn.close(); //객체 다시 POOL 반환 ...
 	   out.print("db 연결 여부 : " + conn.isClosed() + "<br>");
+     
+     
 	%>
 </body>
 </html>
