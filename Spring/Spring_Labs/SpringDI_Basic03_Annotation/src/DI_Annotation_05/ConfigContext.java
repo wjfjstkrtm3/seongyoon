@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  <bean id="user2" class="DI_Annotation_05.User2">
  
  위 코드를 자바파일에서는 함수로 만들어서 객체를 리턴
-  
+
 */
 @Configuration
 public class ConfigContext {
