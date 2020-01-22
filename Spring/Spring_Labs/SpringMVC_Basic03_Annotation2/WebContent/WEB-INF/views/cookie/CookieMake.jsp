@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>CookieMake</h3>
+		<h3>Cookie Make</h3>
 </body>
 </html>

@@ -1,12 +1,6 @@
 package com.service;
 
-import org.springframework.stereotype.Service;
-
 import com.model.NewArticleCommand;
-
-//@Service 하면 xml 설정에서 
-//<context:component-scan base-package="com.controller" />
-//xml 에서 <bean id="" 할 필요가 없다
 
 public class ArticleService {
 	public ArticleService() {

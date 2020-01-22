@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>입력값 확인하기</title>
 </head>
 <body>
-		<h3>CookieView</h3>
+	시발
 </body>
 </html>

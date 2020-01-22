@@ -27,7 +27,6 @@ public class NewArticleController {
 	
 	//NewArticleController 와 ArticleService
 	private ArticleService articleservice;
-	
 	@Autowired
 	public void setArticleservice(ArticleService articleservice) {
 		this.articleservice = articleservice;
@@ -40,10 +39,56 @@ public class NewArticleController {
 		System.out.println("GET 방식에 대한 요청");
 		return "article/newArticleForm";
 		
+		//ViewResolver 에 의해서
+		// /WEB-INF/views/ + article/newArticleForm + .jsp
 	}
 	
 	
+	/*
+	1. 전통적으로 사용되는 Client 요청 데이터 받는 방법
+	   (Spring 더 이상 사용하지 않아요)
+	  public String submit(HttpServletRequest request) {
+		NewArticleCommand article = new NewArticleCommand();
+		
+		article.setParentId(Integer.parseInt(request.getParameter("parentId")));
+		article.setTitle(request.getParameter("title"));
+		article.setContent(request.getParameter("content"));
+		
+		articleservice.writeArticle(article);
+		return "article/newArticleSubmitted";
+	}
 	
+	2. parameter DTO 타입을 명시
+	public String submit(NewArticleCommand command)
+	//동작동리 JPS(Userbean Action 태그 : setProperty)
+	//input name="이름" >> dto 객체 memberfield 같다면 ... setter
+	  
+	>>submit(NewArticleCommand command) 
+	DTO 타입의 memberfield 명과 parameter 이름이 같다면 
+	1. 자동으로 DTO 객체 생성 :   NewArticleCommand command = new NewArticleCommand()
+	2. 넘어온 parameter 값을 setter 통해서 자동의 주입
+	1.1 NewArticleCommand 객체 IOC 컨테이너 안에서 생성 id="newArticleCommand" 자동 생성
+	
+	원칙 : ModelAndView mv = new ModelAndView()
+	       mv.addObject("newArticleCommand",command);
+	       return mv
+	1.2 위 원칙이 없어도 view 페이지에 DTO객체 자동으로 forward (KEY POINT : newArticleCommand)       
+	    
+	다시한면 정리하면
+	
+	1. submit(NewArticleCommand command)
+	   >>자동 객체 생성 , 주입 , 객체변수명이 자동(key) : newArticleCommand
+	   >>forward >> view page 전달
+	   
+	       
+	2. 객체의 이름이 자동으로 생성되는 것이 싫어요
+	   submit(@ModelAttribute("Articledata") NewArticleCommand command) 
+	   >>자동으로 생성되는 객체변수명이 Articledata 강제 (key : Articledata)
+	
+	
+	
+	
+	*/
 	//POST 방식 요청(글쓰기 처리)
 	@RequestMapping(method=RequestMethod.POST)
 	public String submit(@ModelAttribute("Articledata")NewArticleCommand command) {

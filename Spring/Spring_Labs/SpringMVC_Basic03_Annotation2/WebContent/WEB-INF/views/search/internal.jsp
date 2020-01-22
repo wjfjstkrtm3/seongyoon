@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	VIEW 단 페이지 parameter 처리
+	VIEW단 페이지 Parameter 처리
 </body>
 </html>

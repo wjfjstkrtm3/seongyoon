@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>글쓰기 화면</title>
 </head>
 <body>
-		<h3>CookieView</h3>
+	
+	<a href="asd.do">제발</a>
+	<a href="${pageContext.request.contextPath}/uu/jeong.do">jeong.do</a>
 </body>
 </html>
