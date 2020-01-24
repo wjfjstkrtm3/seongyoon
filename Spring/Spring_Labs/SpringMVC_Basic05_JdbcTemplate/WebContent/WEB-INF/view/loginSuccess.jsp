@@ -10,6 +10,6 @@
 <body>
   로그인 ID : <c:out value="${sessionScope.USERID}" /> 님 로그인 성공
  <hr>
- 로그아웃 : <a href="logout.do">로그아웃</a>
+ 로그아웃 : <a href="/logout.do">로그아웃</a>
 </body>
 </html>
