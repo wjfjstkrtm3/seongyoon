@@ -64,6 +64,7 @@ public class NewMemberDao  implements MemberDao{
 			
 			@Override
 			public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
+				System.out.println("회원가입 할때 타냐 안타냐");
 				String sql="INSERT INTO MEMBER(USERID, PWD, NAME, GENDER, BIRTH, IS_LUNAR, CPHONE, EMAIL, HABIT, REGDATE) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, SYSDATE)";
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 	

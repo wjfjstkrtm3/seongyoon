@@ -3260,3 +3260,9 @@ Spring/Spring_Labs/TilesBoot_3Team/.settings/
 *.container
 *.component
 *.jsdtscope
+*.gz
+*.instance
+*.7
+*.14
+*.check
+*.war
