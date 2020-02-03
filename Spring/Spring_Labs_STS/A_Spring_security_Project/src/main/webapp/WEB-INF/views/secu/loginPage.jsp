@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,6 +23,14 @@
 	              <label for="exampleDropdownFormPassword1">Password</label>
 	              <input type="password" class="form-control" name="loginPwd" placeholder="Password">
 	          </div>
+	          <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+	          	<font color="red">
+	          		<p>Your login attemt was not successful due to<br>
+	          		${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</p>
+	          		<c:remove var="SPRING_SECURITY_LAST_EXCEPTION" scope="session"/>
+	          	</font>
+	          </c:if>
+	          
 	          <div class="form-check">
 	              <label class="form-check-label">
 	              <input type="checkbox" class="form-check-input">
@@ -35,6 +44,7 @@
 	      <a class="dropdown-item" href="#">New around here? Sign up</a>
 	      <a class="dropdown-item" href="#">Forgot password?</a>
 	  </div>
+	
 
 </body>
 </html>

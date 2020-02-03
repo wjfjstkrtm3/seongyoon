@@ -9,4 +9,10 @@ public class LoginController {
 	public String page() throws Exception {
 		return "/secu/loginPage";
 	}
+	
+	@RequestMapping(value="/access_denied_page") 
+		public String accessDeniedPage() {
+			return "/access_denied_page";
+		}
+	
 }
