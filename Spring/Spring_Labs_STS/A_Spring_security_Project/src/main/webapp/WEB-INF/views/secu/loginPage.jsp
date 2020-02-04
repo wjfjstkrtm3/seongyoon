@@ -14,21 +14,22 @@
           <h1>Security Prj</h1><br>
       </div>
       <div class="container col-md-4">
-	      <form class="px-4 py-3" action='<c:url value="/login"/>' method="post">
+	      <form class="px-4 py-3" action='<c:out value="${pageContext.request.contextPath}/login3"/>'method="post">
 	          <div class="form-group">
 	              <label for="exampleDropdownFormEmail1">ID</label>
-	              <input type="text" class="form-control" name="loginId" placeholder="example" value="${loginId }">
+	              <input type="text" class="form-control" name="loginId" placeholder="example">
 	          </div>
 	          <div class="form-group">
 	              <label for="exampleDropdownFormPassword1">Password</label>
-	              <input type="password" class="form-control" name="loginPwd" placeholder="Password" value="${loginPwd }">
+	              <input type="password" class="form-control" name="loginPwd" placeholder="Password">
 	          </div>
-				<c:if test="${not empty ERRORMSG}">
+	         <c:if test="${not empty ERRORMSG}">
 					<font color="red">
 				  		<p>Your login attempt was not successful due to <br/>
 				  		${ERRORMSG }</p>
 					</font>
 				</c:if>
+	          
 	          <div class="form-check">
 	              <label class="form-check-label">
 	              <input type="checkbox" class="form-check-input">
@@ -42,6 +43,7 @@
 	      <a class="dropdown-item" href="#">New around here? Sign up</a>
 	      <a class="dropdown-item" href="#">Forgot password?</a>
 	  </div>
+	
 
 </body>
 </html>
