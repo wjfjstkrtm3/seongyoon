@@ -59,4 +59,11 @@ public class CustomUserDetails implements UserDetails {
 	public void setNAME(String name) {
 		NAME = name;
 	}
+
+	@Override
+	public String toString() {
+		return "CustomUserDetails [ID=" + ID + ", PASSWORD=" + PASSWORD + ", AUTHORITY=" + AUTHORITY + ", ENABLED="
+				+ ENABLED + ", NAME=" + NAME + "]";
+	}
+	
 }

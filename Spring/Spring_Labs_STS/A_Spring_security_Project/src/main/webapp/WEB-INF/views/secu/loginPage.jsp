@@ -14,23 +14,21 @@
           <h1>Security Prj</h1><br>
       </div>
       <div class="container col-md-4">
-	      <form class="px-4 py-3" action="${pageContext.servletContext.contextPath}/login" method="post">
+	      <form class="px-4 py-3" action='<c:url value="/login"/>' method="post">
 	          <div class="form-group">
 	              <label for="exampleDropdownFormEmail1">ID</label>
-	              <input type="text" class="form-control" name="loginId" placeholder="example">
+	              <input type="text" class="form-control" name="loginId" placeholder="example" value="${loginId }">
 	          </div>
 	          <div class="form-group">
 	              <label for="exampleDropdownFormPassword1">Password</label>
-	              <input type="password" class="form-control" name="loginPwd" placeholder="Password">
+	              <input type="password" class="form-control" name="loginPwd" placeholder="Password" value="${loginPwd }">
 	          </div>
-	          <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
-	          	<font color="red">
-	          		<p>Your login attemt was not successful due to<br>
-	          		${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</p>
-	          		<c:remove var="SPRING_SECURITY_LAST_EXCEPTION" scope="session"/>
-	          	</font>
-	          </c:if>
-	          
+				<c:if test="${not empty ERRORMSG}">
+					<font color="red">
+				  		<p>Your login attempt was not successful due to <br/>
+				  		${ERRORMSG }</p>
+					</font>
+				</c:if>
 	          <div class="form-check">
 	              <label class="form-check-label">
 	              <input type="checkbox" class="form-check-input">
@@ -44,7 +42,6 @@
 	      <a class="dropdown-item" href="#">New around here? Sign up</a>
 	      <a class="dropdown-item" href="#">Forgot password?</a>
 	  </div>
-	
 
 </body>
 </html>
